@@ -2,14 +2,9 @@ import React, { useEffect, useRef } from 'react';
 import './App.css';
 import useWebAnimations from '@wellyshen/use-web-animations';
 
-function App() {
-  // const ref1 = useRef(null);
-  // const ref2 = useRef(null);
-  // const ref3 = useRef(null);
-  // const ref3 = useRef(null);
-  // const ref4 = useRef(null);
-  const refBackground1 = useRef(null)
-  const refBackground2 = useRef(null)
+const App = () => {
+  const refBackground1 = useRef(null);
+  const refBackground2 = useRef(null);
 
   const ref1 = useWebAnimations({
     keyframes: [
@@ -35,7 +30,6 @@ function App() {
     },
   });
 
-  // const { ref, playState } = useWebAnimations({
   const ref3 = useWebAnimations({
     keyframes: [
       { transform: 'translate(100%)' },
@@ -43,10 +37,7 @@ function App() {
     ],
     timing: {
       duration: 12000,
-      // fill: 'auto',
       iterations: Infinity,
-      // direction: 'Infinity',
-      // easing: 'ease-in-out', // "steps(4,end)" "ease-in-out"
     },
   });
 
@@ -59,78 +50,8 @@ function App() {
         }
       }, 6000);
     }
-    // function goFaster() {
-    //   ref1.playbackRate *= 1.1;
-    //   setInterval(() => {
-    //     if (ref1.playbackRate > 1) {
-    //       ref1.playbackRate *= 0.9;
-    //     }
-    //   }, 6000);
-    // }
     window.addEventListener('click', goFaster);
   });
-
-  // function goFaster() {
-  //   animateAliceQueenSprite.playbackRate *= 1.1;
-  //   setInterval(() => {
-  //     if (animateAliceQueenSprite.playbackRate > 1) {
-  //       animateAliceQueenSprite.playbackRate *= 0.9;
-  //     }
-  //   }, 6000);
-  // }
-  // window.addEventListener('click', goFaster);
-
-  // function goFaster() {
-  //   animateForeground2.playbackRate *= 1.1;
-  //   setInterval(() => {
-  //     if (animateForeground2.playbackRate > 1) {
-  //       animateForeground2.playbackRate *= 0.9;
-  //     }
-  //   }, 6000);
-  // }
-  // const ref3 = useWebAnimations({
-  //   keyframes: [
-  //     { transform: 'translateX(100%)' },
-  //     { transform: 'translateX(-100%)' },
-  //   ],
-  //   timing: {
-  //     duration: 36000,
-  //     iterations: Infinity,
-  //   },
-  // });
-  // useEffect(() => {
-  //   function goFaster() {
-  //     animateBackground2.playbackRate *= 1.1;
-  //     setInterval(() => {
-  //       if (animateBackground2.playbackRate > 1) {
-  //         animateBackground2.playbackRate *= 0.9;
-  //       }
-  //     }, 6000);
-  //   }
-  //   window.addEventListener('click', goFaster);
-  // });
-
-  // useEffect(() => {
-  //   const animateBackground1 =
-  //     ref4.current &&
-  //     ref4.current.animate(
-  //       [{ transform: 'translateX(100%)' }, { transform: 'translateX(-100%)' }],
-  //       {
-  //         duration: 36000,
-  //         iterations: Infinity,
-  //       }
-  //     );
-
-  //   function goFaster() {
-  //     animateBackground1.playbackRate *= 1.1;
-  //     setInterval(() => {
-  //       if (animateBackground1.playbackRate > 1) {
-  //         animateBackground1.playbackRate *= 0.9;
-  //       }
-  //     }, 6000);
-  //   }
-  //   window.addEventListener('click', goFaster);
-  // });
 
   useEffect(() => {
     const animateBackground1 = refBackground1.current && refBackground1.current.animate(
@@ -212,7 +133,6 @@ function App() {
         </div>
         <div ref={refBackground1} className="scenery" id="background2">
           <img id="r_pawn" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/641/r_pawn_small.png" srcSet="https://s3-us-west-2.amazonaws.com/s.cdpn.io/641/r_pawn.png 2x" alt=" " />
-
           <img id="r_knight" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/641/r_knight_small.png" srcSet="https://s3-us-west-2.amazonaws.com/s.cdpn.io/641/r_knight.png 2x" alt=" " />
           <img id="palm2" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/641/palm2_small.png" srcSet="https://s3-us-west-2.amazonaws.com/s.cdpn.io/641/palm2.png 2x" alt=" " />
         </div>
